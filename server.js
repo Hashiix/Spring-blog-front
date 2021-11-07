@@ -13,7 +13,7 @@ app.use(requireHTTPS);
 app.use(express.static('./dist/blogspringfront'));
 
 app.get('/*', (req, res) =>
-  res.sendFile('index.html', {root: 'dist/blogspringfront/'}),
+  res.sendFile('/src/index.html', {root: 'dist/blogspringfront/'}),
 );
 
 app.listen(process.env.PORT || 8080);
