@@ -10,10 +10,10 @@ const express = require('express');
 const app = express();
 
 app.use(requireHTTPS);
-app.use(express.static('./dist/blogspringfront'));
+app.use(express.static(__dirname + '/dist/blog-frontend'));
 
 app.get('/*', (req, res) =>
-  res.sendFile('/src/index.html', {root: 'dist/blogspringfront/'}),
+  res.sendFile(path.join(__dirname + '/dist/blog-frontend/index.html'))
 );
 
 app.listen(process.env.PORT || 8080);
